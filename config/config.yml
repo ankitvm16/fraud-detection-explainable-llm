@@ -1,5 +1,5 @@
 data:
-  data_path: "data/credit_card_behaviour_score.csv"
+  data_path: "../data/credit_card_behaviour_score.csv.gz"
   test_size: 0.2
   random_state: 42
 
@@ -17,12 +17,4 @@ explainability:
     - ALE
     - IntegratedGradients
     - Counterfactual
-  llm:
-    use_llm: true
-    # Will update the open-source LLM model - currently Llama‑2
-    model_name: "meta-llama/Llama-2-7b-chat-hf"
-    prompt_template: |
-      The following transaction has been flagged with a fraud probability of {fraud_prob:.2f}.
-      Key contributing features include: {feature_explanations}.
-      Transaction narrative: "{narrative}".
-      Provide a clear and concise plain-language explanation of why this transaction might be fraudulent and suggest potential next steps.
+  
